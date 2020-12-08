@@ -34,6 +34,10 @@ const App = () => {
     setError("Phone Number must contain only numbers");
     return;
   }
+  if (format.test(phoneNumber)){
+    setError("Phone Number must contain only numbers");
+    return;
+  }
   if(password.length <= 6){
     setError("Password must contain atleast 6 letters");
     return;
