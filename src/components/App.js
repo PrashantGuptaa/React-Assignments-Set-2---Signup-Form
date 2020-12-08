@@ -30,7 +30,7 @@ const App = () => {
   setError("Please identify as male, female or others");
   return;
   }
-  if (/[^a-zA-Z]/.test(phoneNumber) && format.test(phoneNumber)){
+  if (/[^a-zA-Z]/.test(phoneNumber) || format.test(phoneNumber)){
     setError("Phone Number must contain only numbers");
     return;
   }
