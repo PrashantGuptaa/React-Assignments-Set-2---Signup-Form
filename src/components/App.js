@@ -30,7 +30,7 @@ const App = () => {
   setError("Please identify as male, female or others");
   return;
   }
-  if (/[^a-zA-Z]/.test(phoneNumber) || format.test(phoneNumber)){
+  if (!/[^a-zA-Z]/.test(phoneNumber)){
     setError("Phone Number must contain only numbers");
     return;
   }
@@ -50,7 +50,7 @@ const App = () => {
         Name <input data-testid="name" onChange = {(event) => {setName(event.target.value)} } />
         Email <input data-testid="email" onChange = {(event) => {setEmail(event.target.value)} }/>
         Gender <input data-testid="gender" value = "male" onChange = {(event) => {setGender(event.target.value)} } />
-        Phone Number <input data-testid="phoneNumber" onChange = {(event) => {setPhoneNUmber(event.target.value)} }/>
+        Phone Number <input data-testid="phoneNumber" type = "Number" onChange = {(event) => {setPhoneNUmber(event.target.value)} }/>
         Password <input data-testid="password" type="password" onChange = {(event) => {setPassword(event.target.value)} }/>
         <input data-testid="submit" type="submit" onClick = {handleSubmit} />
       </form>
